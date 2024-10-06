@@ -51,18 +51,6 @@
     <footer>
 
     </footer>
-    <script>
-        const data = new Date();
-        const opcoes = { year: 'numeric', month: 'long', day: 'numeric' };
-        const dataFormatada = data.toLocaleDateString('pt-BR', opcoes);
-        document.getElementById('dataAtual').textContent = dataFormatada;
-    </script>
-    <script>
-        function mostrarProgramacao(dia) {
-            const programacoes = document.querySelectorAll('.programacao');
-            programacoes.forEach(p => p.classList.remove('active')); // Oculta todas as programações
-            document.getElementById(dia).classList.add('active'); // Mostra a programação selecionada
-        }
-    </script>
+    <script src="controller/js/controle.js"></script>
 </body>
 </html>

@@ -83,8 +83,11 @@ iframe#tv-online {
     cursor: pointer;
     border: 1px solid;
     padding: 5px;
-    border-radius: 50%;
+    border-radius: 25%;
     margin-left: 10px;    
+}
+#ultimas-noticias > div > i:hover {
+    color: var(--cor-laranja);   
 }
 #publicidade-top {
     background-image: url('../img/publicidade/bg-ads.png');

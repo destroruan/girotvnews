@@ -15,7 +15,7 @@
 }
 .blinking {
     color: var(--cor-salmao);
-    animation: blink-animation 5s steps(5, start) infinite;
+    animation: blink-animation 3s steps(5, start) infinite;
     padding: 10px;
 }
 @media (max-width: 768px) {
