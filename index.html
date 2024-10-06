@@ -32,12 +32,8 @@
         <section>
             <div class="flex center" style="margin: auto;">
                 <div>
-                    <p class="blinking"><i class="fas fa-tv"></i> AO VIVO</p>
+                    <p class="blinking bold"><i class="fas fa-tv"></i> AO VIVO</p>
                     <iframe src="https://gerador.livecenter.host/player.html?data=U2FsdGVkX1%2BG7b93h8I%2B4976MuZOfCgb01IS6z5TkO9bkjQcVKU5sQlQ0iLPrs1DV2CpjF2vCl0YGzV5uwOGFHr5K%2F8m1Yhvj57YXiD%2FWtY%3D" frameborder="0" id="tv-online" autoplay></iframe>
-                </div>
-                <div id="cronograma-tv">
-                    <h1>CRONOGRAMA</h1>
-                    <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid accusantium quasi earum rerum delectus praesentium fugiat suscipit. Obcaecati, vero beatae officiis quidem libero soluta earum adipisci, neque magni saepe laudantium!</P>
                 </div>
             </div>
         </section>
@@ -60,6 +56,13 @@
         const opcoes = { year: 'numeric', month: 'long', day: 'numeric' };
         const dataFormatada = data.toLocaleDateString('pt-BR', opcoes);
         document.getElementById('dataAtual').textContent = dataFormatada;
+    </script>
+    <script>
+        function mostrarProgramacao(dia) {
+            const programacoes = document.querySelectorAll('.programacao');
+            programacoes.forEach(p => p.classList.remove('active')); // Oculta todas as programações
+            document.getElementById(dia).classList.add('active'); // Mostra a programação selecionada
+        }
     </script>
 </body>
 </html>

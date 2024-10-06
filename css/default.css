@@ -45,9 +45,9 @@ iframe#tv-online {
     border: 1px solid var(--cor-laranja);
     overflow-x: hidden;
     overflow-y: hidden;
-    width: 760px;
-    height: 450px;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.300);
+    width: 642px;
+    height: 370px;
+    box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.300);
     background-color: white;
 }
 #hamburguer {
@@ -91,13 +91,58 @@ iframe#tv-online {
     max-width: 1080px;
     margin: auto;
     margin-top: 5px;
+    border-radius: 15px;
     padding: 10px;
 }
 #publicidade-top > div > img {
+    border-radius: 15px;
     width: 90%;
 }
 #cronograma-tv {
-    display: none;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.300);
+    border: 1px solid var(--cor-laranja);
+    text-align: center;
+    margin-left: 10px;
+    font-size: 12px;
+    height: 340px;
+}
+#cronograma-tv p {
+    color: var(--cor-cinza-escuro);
+}
+#cronograma-tv .button-container {
+    margin-top: 20px;
+}
+#cronograma-tv .button {
+    background-color: var(--cor-laranja);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    font-size: 12px;
+}
+#cronograma-tv .button:hover {
+    background-color: var(--cor-salmao);
+}
+#cronograma-tv .programacao {
+    margin-top: 20px;
+    display: none; 
+}
+#cronograma-tv .programacao.active {
+    display: block; 
+}
+#cronograma-tv .programacao h2 {
+    color: var(--cor-vinho);
+}
+#cronograma-tv .programa {
+    text-align: left;
+    margin: 10px 0;
 }
 @media (max-width: 768px) {    
     div#cabecalho > div > a {
