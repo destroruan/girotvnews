@@ -1,0 +1,25 @@
+@charset "UTF-8";
+.flex {
+    display: flex;
+    align-items: center;
+    max-width: 1080px;
+}
+.left {
+    justify-content: left;
+}
+.center {
+    justify-content: center;
+}
+.bold {
+    font-weight: bold;
+}
+.blinking {
+    color: var(--cor-salmao);
+    animation: blink-animation 5s steps(5, start) infinite;
+    padding: 10px;
+}
+@media (max-width: 768px) {
+    .flex {
+        max-width: 420px;
+    }   
+}

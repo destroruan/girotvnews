@@ -1,0 +1,127 @@
+@charset "UTF-8";
+@import url('class.css');
+:root {
+    --cor-laranja: #F27127;
+    --cor-salmao: #F2784B;
+    --cor-vinho: #8C0303;
+    --cor-cinza: #F2F2F2;
+    --cor-cinza-escuro: #4d4d4d; 
+    --cor-preto: #0D0D0D;    
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body, html {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+    background-color: var(--cor-cinza);
+}
+div#cabecalho {
+    padding: 10px;   
+    background-color: var(--cor-salmao);
+}
+div#cabecalho > div {
+    margin: auto;   
+}
+div#cabecalho > div > a {
+    text-decoration: none;
+    font-size: 28px;
+    display: block; 
+    color: var(--cor-cinza);  
+}
+div#cabecalho > div > a:hover {
+    color: var(--cor-vinho);
+}
+div#cabecalho > div > a > img{
+    height: 40px;  
+}
+section {
+    text-align: center;
+}
+iframe#tv-online {
+    border-radius: 10px;
+    border: 1px solid var(--cor-laranja);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 760px;
+    height: 450px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.300);
+    background-color: white;
+}
+#hamburguer {
+    margin-right: 20%;
+}
+#procurar {
+    margin-left: 20%;
+}
+#ultimas-noticias {
+    text-align: center;
+    padding: 5px;  
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.300); 
+    color: var(--cor-cinza-escuro);
+    font-size: 14px;
+}
+#ultimas-noticias > div {
+    margin: auto;    
+}
+#ultimas-noticias > div h1 {
+    font-size: 14px;   
+}
+#ultimas-noticias > div > p {   
+    max-width: 75%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 5px;
+}
+#ultimas-noticias > div > p::before {   
+    content: "| ";
+}
+#ultimas-noticias > div > i {
+    cursor: pointer;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 50%;
+    margin-left: 10px;    
+}
+#publicidade-top {
+    background-image: url('../img/publicidade/bg-ads.png');
+    max-width: 1080px;
+    margin: auto;
+    margin-top: 5px;
+    padding: 10px;
+}
+#publicidade-top > div > img {
+    width: 90%;
+}
+#cronograma-tv {
+    display: none;
+}
+@media (max-width: 768px) {    
+    div#cabecalho > div > a {
+        font-size: 24px; 
+    }
+    iframe#tv-online {
+        max-width: 420px;
+        height: 250px;
+    }
+    #publicidade-top {
+        max-width: 420px;
+    }
+    #cronograma-tv {
+        display: none;
+    }
+}
+@keyframes blink-animation {
+    0% {
+        visibility: visible;
+    }
+    50% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}

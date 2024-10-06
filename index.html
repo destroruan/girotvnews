@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>GIRO TV News</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="simbols/css/all.css">
+    <link rel="stylesheet" href="css/default.css">
+</head>
+<body>
+    <header> 
+        <div id="cabecalho">
+            <div class="flex center">
+                <a href="" id="hamburguer"><i class="fa-solid fa-bars"></i></a>
+                <a href="index.html"><img src="img/logotipo.png" alt="logotipo"></a>   
+                <a href="" id="procurar"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </div>
+        </div>       
+    </header>
+    <main>
+        <section id="ultimas-noticias">
+            <div class="flex center">
+                <div><i class="fa-solid fa-newspaper"></i></div>
+                <h1 style="text-transform: uppercase; margin-left: 5px;">últimas notícias</h1>                
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, ducimus eius beatae ipsa deleniti maxime, eaque non doloremque atque quaerat accusantium nesciunt vitae? Eum illum sapiente, repellendus laboriosam corporis ullam!</p>
+                <i class="fa-solid fa-backward-step" id="prev" onclick=""></i>
+                <i class="fa-solid fa-forward-step" id="next" onclick=""></i>
+            </div>                        
+        </section>
+        <section>
+            <div class="flex center" style="margin: auto;">
+                <div>
+                    <p class="blinking"><i class="fas fa-tv"></i> AO VIVO</p>
+                    <iframe src="https://gerador.livecenter.host/player.html?data=U2FsdGVkX1%2BG7b93h8I%2B4976MuZOfCgb01IS6z5TkO9bkjQcVKU5sQlQ0iLPrs1DV2CpjF2vCl0YGzV5uwOGFHr5K%2F8m1Yhvj57YXiD%2FWtY%3D" frameborder="0" id="tv-online" autoplay></iframe>
+                </div>
+                <div id="cronograma-tv">
+                    <h1>CRONOGRAMA</h1>
+                    <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid accusantium quasi earum rerum delectus praesentium fugiat suscipit. Obcaecati, vero beatae officiis quidem libero soluta earum adipisci, neque magni saepe laudantium!</P>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div id="publicidade-top">
+                <div class="flex center" style="margin: auto;">
+                    <h1 style="text-transform: uppercase; font-size: 10px; margin-bottom: 10px; color: var(--cor-cinza-escuro);">publicidade</h1>
+                </div>
+                <div class="flex center" style="margin: auto;">
+                    <img src="img/publicidade/foto.jpg" alt="publicidade">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        const data = new Date();
+        const opcoes = { year: 'numeric', month: 'long', day: 'numeric' };
+        const dataFormatada = data.toLocaleDateString('pt-BR', opcoes);
+        document.getElementById('dataAtual').textContent = dataFormatada;
+    </script>
+</body>
+</html>
