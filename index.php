@@ -7,7 +7,7 @@
     <title>GIRO TV News</title>
 </head>
 <body>
-    <div id="login"></div>
+    <div id="login" class="flex left"></div>
     <header id="cabeca"></header>
     <main>
         <section>

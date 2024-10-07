@@ -14,7 +14,7 @@ function loadHeader() {
         .catch(error => {
             console.error('Houve um problema com a solicitação Fetch:', error);
         });
-    
+
     const login = document.getElementById('login');
 
     fetch('view/assets/include/login.html')
@@ -26,21 +26,6 @@ function loadHeader() {
         })
         .then(data => {
             login.innerHTML = data;
-        })
-        .catch(error => {
-            console.error('Houve um problema com a solicitação Fetch:', error);
-        });
-    const menuprogramas = document.getElementById('menuprogramas');
-
-    fetch('view/assets/include/menuprogramas.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(data => {
-            menuprogramas.innerHTML = data;
         })
         .catch(error => {
             console.error('Houve um problema com a solicitação Fetch:', error);

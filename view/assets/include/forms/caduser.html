@@ -7,40 +7,42 @@
     <link rel="stylesheet" href="../../css/default.css">
 </head>
 <body>
-<div class="form-container">
-    <div class="flex center">
-        <img src="../../img/logotipo.png" alt="logotipo">
+    <div class="form-container">
+        <div class="flex center">
+            <img src="../../img/logotipo.png" alt="logotipo">
+        </div>
+        <h1 style="color: white; font-size: 16px; text-transform: uppercase; margin-top: 10px;">Cadastro de usuário</h1>
+        <form action="" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="usuario">Nome de Usuário:</label>
+            <input type="text" id="usuario" name="usuario" required>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            <label for="confirmar-senha">Confirmar Senha:</label>
+            <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+            <label for="nivel-acesso">Nível de Acesso:</label>
+            <select id="nivel-acesso" name="nivel-acesso" required>
+                <option value="redator">✍️ Redator</option>
+                <option value="editor">📝 Editor</option>
+                <option value="administrador">👑 Administrador</option>
+            </select>
+            <label for="programa">Programa:</label>
+            <select id="programa" name="programa" required>
+                <option value="programa1">Programa 1</option>
+                <option value="programa2">Programa 2</option>
+                <option value="programa3">Programa 3</option>
+                <option value="programa4">Programa 4</option>
+            </select>
+            <p style="color: white;">Caso o programa do usuário não estiver acima, favor solicitar ou adicionar o programa através do formulário: <a href="">Cadastro de programa</a></p>
+            <label class="terms">
+                <input type="checkbox" required>
+                Eu concordo com os termos de uso e política de privacidade.
+            </label>
+            <button type="submit">Cadastrar</button>
+        </form>
     </div>
-    <form action="" method="post">
-        <label for="nome">Nome Completo:</label>
-        <input type="text" id="nome" name="nome" required>
-
-        <label for="usuario">Nome de Usuário:</label>
-        <input type="text" id="usuario" name="usuario" required>
-
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required>
-
-        <label for="confirmar-senha">Confirmar Senha:</label>
-        <input type="password" id="confirmar-senha" name="confirmar-senha" required>
-
-        <label for="nivel-acesso">Nível de Acesso:</label>
-        <select id="nivel-acesso" name="nivel-acesso" required>
-            <option value="redator">✍️ Redator</option>
-            <option value="editor">📝 Editor</option>
-            <option value="administrador">👑 Administrador</option>
-        </select>
-
-        <label class="terms">
-            <input type="checkbox" required>
-            Eu concordo com os termos de uso e política de privacidade.
-        </label>
-
-        <button type="submit">Cadastrar</button>
-    </form>
-</div>
 </body>
 </html>
