@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $programa = htmlspecialchars($_POST['programa']);
 
             DB::criarUsuario($nome, $usuario, $email, $senha, $nivel_acesso, $programa);
-            
+            header("Location: ../portal.php");
         } else {
             echo "Todos os campos são obrigatórios!";
         }

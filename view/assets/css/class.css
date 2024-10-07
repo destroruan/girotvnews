@@ -1,4 +1,9 @@
 @charset "UTF-8";
+.flextotal {
+    display: flex;
+    align-items: center;
+    max-width: 1920px;
+}
 .flex {
     display: flex;
     align-items: center;

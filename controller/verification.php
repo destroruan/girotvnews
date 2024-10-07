@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_name'] = $user['nome'];
         $_SESSION['user_nivel'] = $user['nivel_acesso'];
+        $_SESSION['user_prog'] = $user['programa'];
         
         header("Location: ../portal.php");
         exit();
