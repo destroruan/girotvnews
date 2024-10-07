@@ -1,9 +1,49 @@
-const data = new Date();
-const opcoes = { year: 'numeric', month: 'long', day: 'numeric' };
-const dataFormatada = data.toLocaleDateString('pt-BR', opcoes);
-document.getElementById('dataAtual').textContent = dataFormatada;
-function mostrarProgramacao(dia) {
-    const programacoes = document.querySelectorAll('.programacao');
-    programacoes.forEach(p => p.classList.remove('active'));
-    document.getElementById(dia).classList.add('active');
+function loadHeader() {
+    const header = document.getElementById('cabeca');
+    
+    fetch('view/assets/include/cabeca.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            header.innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Houve um problema com a solicitação Fetch:', error);
+        });
+    
+    const login = document.getElementById('login');
+
+    fetch('view/assets/include/login.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            login.innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Houve um problema com a solicitação Fetch:', error);
+        });
+    const menuprogramas = document.getElementById('menuprogramas');
+
+    fetch('view/assets/include/menuprogramas.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            menuprogramas.innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Houve um problema com a solicitação Fetch:', error);
+        });
 }
+loadHeader();
