@@ -1,0 +1,34 @@
+@charset "UTF-8";
+#desktop {
+    margin: auto;
+}
+#aba-left {
+    width: 10%;
+    height: 100vh;
+    background-color: var(--cor-salmao);
+    padding: 0px 5px;
+    text-align: center;
+}
+#aba-left > a > img{
+    width: 80%;
+    margin-top: 5px;
+}
+#aba-right {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.300);
+}
+#nomeusuario > a {
+    margin-left: 5px;
+    text-decoration: none;
+    color: var(--cor-laranja);
+}
+#nomeusuario {
+    padding: 5px;
+    font-size: 10px; 
+    text-transform: uppercase; 
+    font-weight: bold; 
+    color: var(--cor-laranja);
+    margin-right: 10px;
+}

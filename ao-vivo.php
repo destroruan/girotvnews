@@ -7,6 +7,7 @@
     <title>Ao vivo - GIRO TV News</title>
 </head>
 <body>
+    <div id="login" class="flex right"></div>    
     <header id="cabeca"></header>
     <main>
         <section class="sombra">
@@ -31,7 +32,7 @@
         <section>
             <div id="publicidade-top">
                 <div class="flex center" style="margin: auto;">
-                    <h1 style="text-transform: uppercase; font-size: 10px; margin-bottom: 10px; color: var(--cor-cinza-escuro);">publicidade</h1>
+                    <h1 style="text-transform: uppercase; font-size: 10px; margin-bottom: 10px; color: var(--cor-cinza-claro);">publicidade</h1>
                 </div>
                 <div class="flex center" style="margin: auto;">
                     <img src="view/assets/img/publicidade/foto.jpg" alt="publicidade">

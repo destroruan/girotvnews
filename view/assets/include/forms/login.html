@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - GIRO TV News</title>
+    <link rel="stylesheet" href="../../css/default.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="flex center">
+            <img src="../../img/logotipo.png" alt="logotipo">
+        </div>
+        <h1 style="color: white; font-size: 16px; text-transform: uppercase; margin-top: 10px;">Login de Usuário</h1>
+        <form action="../../../../controller/verification.php" method="post">
+            <div>
+                <label for="usuario">Nome de Usuário ou E-mail:</label>
+                <input type="text" id="usuario" name="usuario" required>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <button type="submit">Entrar</button>   
+        </form>
+    </div>    
+</body>
+</html>
