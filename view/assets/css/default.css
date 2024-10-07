@@ -19,7 +19,7 @@ body, html {
     background-color: var(--cor-cinza);
 }
 div#cabecalho {
-    padding: 10px;   
+    padding: 5px;   
     background-color: var(--cor-salmao);
 }
 div#cabecalho > div {
@@ -58,8 +58,7 @@ iframe#tv-online {
 }
 #ultimas-noticias {
     text-align: center;
-    padding: 5px;  
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.300); 
+    padding: 5px;   
     color: var(--cor-cinza-escuro);
     font-size: 14px;
 }
