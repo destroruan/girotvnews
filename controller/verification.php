@@ -1,6 +1,5 @@
 <?php
-session_start();
-require_once 'DB.php';
+require 'functions.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuario = $_POST['usuario'];
@@ -9,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = DB::verificarLogin($usuario, $senha);
 
     if ($user) {
+        session_start();
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_name'] = $user['nome'];
         $_SESSION['user_nivel'] = $user['nivel_acesso'];

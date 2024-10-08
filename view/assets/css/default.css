@@ -51,8 +51,8 @@ iframe#tv-online {
     border: 1px solid var(--cor-laranja);
     overflow-x: hidden;
     overflow-y: hidden;
-    width: 642px;
-    height: 370px;
+    width: 950px;
+    height: 505px;
     box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.300);
     background-color: white;
 }
@@ -171,7 +171,7 @@ div#login > a:hover{
     }
     iframe#tv-online {
         max-width: 420px;
-        height: 250px;
+        max-height: 245px;
     }
     #publicidade-top {
         max-width: 420px;
@@ -179,6 +179,12 @@ div#login > a:hover{
     #cronograma-tv {
         display: none;
     }
+}
+@media (max-width: 990px) {    
+    iframe#tv-online {
+        width: 700px;
+        height: 405px;
+    }    
 }
 @keyframes blink-animation {
     0% {

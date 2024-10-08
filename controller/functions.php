@@ -2,8 +2,9 @@
 require_once '../model/db.php';
 
 class DB {
+    // Função para obter a conexão com o banco de dados
     private static function getConnection() {
-        return getConnection(); // Utiliza a função de conexão definida em db.php
+        return getConnection(); // Supondo que você tenha uma função getConnection em db.php
     }
 
     // Função para criar uma tabela com base nos parâmetros fornecidos
@@ -31,30 +32,41 @@ class DB {
     public static function criarTabelaUsuarios() {
         $colunas = [
             'id' => 'INT AUTO_INCREMENT PRIMARY KEY',
-            'nome' => 'VARCHAR(255) NOT NULL',        // Nome do usuário
-            'usuario' => 'VARCHAR(255) NOT NULL',        // Nome do usuário
-            'email' => 'VARCHAR(255) UNIQUE NOT NULL', // E-mail único
-            'senha' => 'VARCHAR(255) NOT NULL',    // Senha criptografada
-            'nivel_acesso' => 'VARCHAR(50) NOT NULL',  // Nível de acesso (exemplo: 'redator', 'editor', 'administrador')
-            'programa' => 'VARCHAR(255) NOT NULL',    // Programa do usuário
-            'created_at' => 'TIMESTAMP DEFAULT CURRENT_TIMESTAMP' // Data de criação
+            'nome' => 'VARCHAR(255) NOT NULL',
+            'usuario' => 'VARCHAR(255) NOT NULL',
+            'email' => 'VARCHAR(255) UNIQUE NOT NULL',
+            'senha' => 'VARCHAR(255) NOT NULL',
+            'nivel_acesso' => 'VARCHAR(50) NOT NULL',
+            'programa' => 'VARCHAR(255) NOT NULL',
+            'created_at' => 'TIMESTAMP DEFAULT CURRENT_TIMESTAMP'
         ];
 
         return self::criarTabela('users', $colunas);
+    }
+
+    public static function criarTabelasPadrao() {
+        $colunas = [
+            'id' => 'INT AUTO_INCREMENT PRIMARY KEY',
+            'nome' => 'VARCHAR(255) NOT NULL'
+        ];
+        self::criarTabela('categorias', $colunas);
+        $colunas = [
+            'id' => 'INT AUTO_INCREMENT PRIMARY KEY',
+            'nome' => 'VARCHAR(255) NOT NULL'
+        ];
+        self::criarTabela('cidades', $colunas);
     }
 
     // Função para criar um novo usuário
     public static function criarUsuario($nome, $usuario, $email, $senha, $nivelAcesso, $programa) {
         try {
             $pdo = self::getConnection();
-            $senhaCriptografada = password_hash($senha, PASSWORD_DEFAULT); // Criptografa a senha
-            
+            $senhaCriptografada = password_hash($senha, PASSWORD_DEFAULT);
+
             $sql = "INSERT INTO users (nome, usuario, email, senha, nivel_acesso, programa) 
                     VALUES (:nome, :usuario, :email, :senha, :nivel_acesso, :programa)";
             
             $stmt = $pdo->prepare($sql);
-            
-            // Passando os valores para os placeholders (sem 'created_at')
             $stmt->execute([
                 'nome' => $nome, 
                 'usuario' => $usuario,
@@ -63,7 +75,7 @@ class DB {
                 'nivel_acesso' => $nivelAcesso,
                 'programa' => $programa
             ]);
-            
+
             return $pdo->lastInsertId(); // Retorna o ID do último inserido
         } catch (PDOException $e) {
             // Se ocorrer um erro, redireciona para a página de cadastro
@@ -74,7 +86,6 @@ class DB {
 
     // Função para verificar o login
     public static function verificarLogin($usuario, $senha) {
-        // Busca o usuário por nome ou e-mail
         $pdo = self::getConnection();
         $sql = "SELECT * FROM users WHERE email = :usuario OR usuario = :usuario LIMIT 1";
         $stmt = $pdo->prepare($sql);
@@ -86,13 +97,36 @@ class DB {
         if ($user && self::verificarSenha($senha, $user['senha'])) {
             return $user;
         }
-        // Retorna false caso o login falhe
-        return false;
+        return false; // Retorna false caso o login falhe
     }
 
     // Função para verificar a senha
     public static function verificarSenha($senhaInformada, $senhaCriptografada) {
         return password_verify($senhaInformada, $senhaCriptografada);
+    }
+
+    // Função para inserir um artigo
+    public static function inserirArtigo($titulo, $autor, $data, $categoria, $cidade, $resumo, $conteudo, $palavras_chave, $imagens, $referencias) {
+        $pdo = self::getConnection();
+        $sql = "INSERT INTO artigos (titulo, autor, data, categoria_id, cidade_id, resumo, conteudo, palavras_chave, imagens, referencias) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        
+        $stmt = $pdo->prepare($sql);
+        return $stmt->execute([$titulo, $autor, $data, $categoria, $cidade, $resumo, $conteudo, $palavras_chave, $imagens, $referencias]);
+    }
+
+    public static function trazerOptions($condicao) {
+        $pdo = self::getConnection(); 
+        $sql = "SELECT " . $condicao;
+        $result = $pdo->query($sql);
+    
+        if ($result) {
+            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                echo "<option value='" . htmlspecialchars($row['id']) . "'>" . htmlspecialchars($row['nome']) . "</option>";
+            }
+        } else {
+            echo "<option value=''>Nenhum resultado encontrado</option>";
+        }
     }
 }
 ?>
