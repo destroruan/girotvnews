@@ -1,14 +1,31 @@
 @charset "UTF-8";
-.form-container {
-    margin: auto;
+#formulario-login {
     background: var(--cor-salmao);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    max-width: 700px;
+    width: 350px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#formulario-login > div {
+    margin: auto;
+}
+#formulario-login > div > img {
+    height: 40px;
+}
+#formulario-post {
+    background: var(--cor-principal);
+    width: 100%;
     text-align: center;
 }
-.form-container > div > img {
+#formulario-post > div {
+    margin: auto;
+}
+#formulario-post > div > img {
     height: 40px;
 }
 h2 {
@@ -38,7 +55,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 100%;
+    width: 25%;
     font-weight: bold;
     transition: background-color 0.3s;
 }
@@ -53,7 +70,7 @@ label {
     color: white;
 }
 form > div {
-    width: 40%;
+    width: 70%;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
