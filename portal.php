@@ -17,7 +17,7 @@
     <div id="desktop" class="flextotal">
         <div id="aba-left">
             <a href="portal.php"><img src="view/assets/img/logotipo.png" alt="logotipo"></a>
-            <a onclick="mostrarnopainel()" class="button"><i class="fa-solid fa-clipboard-list"></i> Publicar</a>
+            <a onclick="mostrarnopainel('cadnoticias.php')" class="button"><i class="fa-solid fa-clipboard-list"></i> Criar</a>
             <a onclick="mostrarnopainel()" class="button"><i class="fa-solid fa-clipboard-list"></i> Programação</a>
         </div>
         <div id="aba-right">
@@ -25,12 +25,9 @@
                 <p><?php echo $programa . " | " . $nivel . " | " . $nome?></p>
                 <a href="" title="Sair"><i class="fa-solid fa-right-from-bracket"></i></a>
             </div>
-            <section id="painel-do-usuario">
-                <div id="postnoticias">
-                    <h1>postagem de notícias - <?php echo $programa;?></h1>                    
-                </div>
-            </section>
+            <section id="painel-do-usuario"></section>
         </div>
-    </div>    
+    </div>
+    <script src="controller/js/controle.js"></script>    
 </body>
 </html>

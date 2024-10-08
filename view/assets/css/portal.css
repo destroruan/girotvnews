@@ -1,56 +1,55 @@
 @charset "UTF-8";
 :root {
-    --cor-principal: #003a55; /* Azul WordPress */
-    --cor-secundaria: #0096D6; /* Azul mais claro */
-    --cor-fundo: #F7F7F7; /* Fundo claro */
-    --cor-texto: #333333; /* Texto escuro */
-    --cor-borda: #DDDDDD; /* Cinza claro para bordas */
-    --cor-sucesso: #46B450; /* Verde para sucesso */
-    --cor-alerta: #D54E21; /* Vermelho para alertas */
-    --cor-cinza-claro: #F1F1F1; /* Cinza muito claro */
-    --cor-cinza-escuro: #7A7A7A; /* Cinza escuro */
-    --sombra-texto: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra leve */
+    --cor-principal: #003a55;
+    --cor-secundaria: #0096D6;
+    --cor-fundo: #F7F7F7;
+    --cor-texto: #333333;
+    --cor-borda: #DDDDDD;
+    --cor-sucesso: #46B450;
+    --cor-alerta: #D54E21;
+    --cor-cinza-claro: #F1F1F1;
+    --cor-cinza-escuro: #7A7A7A;
+    --sombra-texto: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    --fonte-h1: 16px;
+    --fonte-h2: 14px;
+    --fonte-p: 12px;
+    --fonte-apoio: 10px;
 }
-
 #desktop {
     margin: auto;
 }
-
 #aba-left {
     width: 150px;
     height: 100vh;
-    background-color: var(--cor-principal); /* Azul WordPress */
+    background-color: var(--cor-principal);
     text-align: center;
 }
-
 #aba-left > a > img {
     width: 80%;
     margin-top: 5px;
     margin-bottom: 15px;
 }
-
 #aba-right {
     width: 100%;
     height: 100vh;
-    background-color: var(--cor-fundo); /* Fundo claro */
     box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
-
 #nomeusuario > a {
     margin-left: 5px;
     text-decoration: none;
-    color: var(--cor-texto); /* Texto escuro */
+    color: var(--cor-texto);
 }
-
+#nomeusuario > a:hover {
+    color: var(--cor-alerta);
+}
 #nomeusuario {
     padding: 5px;
     font-size: 10px; 
     text-transform: uppercase; 
     font-weight: bold; 
-    color: var(--cor-texto); /* Texto escuro */
+    color: var(--cor-texto);
     margin-right: 10px;
 }
-
 #aba-left > a.button {
     cursor: pointer;
     display: block;
@@ -58,25 +57,22 @@
     font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
-    color: var(--cor-borda); /* Texto escuro */
-    border-top: 1px solid var(--cor-borda); /* Borda clara */
-    border-bottom: 1px solid var(--cor-borda); /* Borda clara */
+    color: var(--cor-borda); 
+    border-top: 1px solid var(--cor-borda); 
+    border-bottom: 1px solid var(--cor-borda); 
     padding: 10px 0px;
 }
-
 #aba-left > a:hover {
-    color: var(--cor-cinza); /* Hover escuro */
+    color: var(--cor-cinza);
 }
-
-#painel-do-usuario > #postnoticias {
+#postnoticias {
     width: 100%;
+    background-color: var(--cor-secundaria);
 }
-
-#painel-do-usuario > #postnoticias > h1 {
-    color: var(--cor-cinza); /* Título escuro */
+#postnoticias > div > h1 {
+    color: var(--cor-cinza); 
     text-shadow: var(--sombra-texto);
     text-transform: uppercase;
-    background-color: var(--cor-fundo); /* Fundo claro */
     padding: 10px 0px;
-    width: 100%;
+    font-size: var(--fonte-h1);
 }

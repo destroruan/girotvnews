@@ -31,4 +31,26 @@ function loadHeader() {
             console.error('Houve um problema com a solicitação Fetch:', error);
         });
 }
+function mostrarnopainel(arquivo) {
+    const painel = document.getElementById('painel-do-usuario');
+    const pasta = 'view/assets/include/php/'; // Define a pasta onde os arquivos estão
+
+    // Limpa o conteúdo do painel antes de carregar o novo
+    painel.innerHTML = 'Carregando...';
+    
+    // Faz uma requisição para o arquivo na pasta especificada
+    fetch(pasta + arquivo)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao carregar o conteúdo.');
+            }
+            return response.text(); // Obtém o texto do conteúdo
+        })
+        .then(data => {
+            painel.innerHTML = data; // Insere o conteúdo no painel
+        })
+        .catch(error => {
+            painel.innerHTML = 'Erro ao carregar o conteúdo: ' + error.message;
+        });
+}
 loadHeader();
