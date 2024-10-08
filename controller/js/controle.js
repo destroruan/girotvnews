@@ -33,7 +33,7 @@ function loadHeader() {
 }
 function mostrarnopainel(arquivo) {
     const painel = document.getElementById('painel-do-usuario');
-    const pasta = 'view/assets/include/php/'; // Define a pasta onde os arquivos estão
+    const pasta = 'controller/'; // Define a pasta onde os arquivos estão
 
     // Limpa o conteúdo do painel antes de carregar o novo
     painel.innerHTML = 'Carregando...';
