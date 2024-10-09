@@ -18,8 +18,7 @@
     height: 40px;
 }
 #formulario-post {
-    background: var(--cor-principal);
-    width: 100%;
+    width: 50%;
     text-align: center;
 }
 #formulario-post > div {
